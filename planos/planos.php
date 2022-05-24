@@ -37,9 +37,7 @@
                      <li class="nav-item active">
                         <a class="nav-link" href="/planos-php/planos.php"> Planos </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/show-db/show-db.php"> Planos_Itens </a>
-                    </li>
+                  
                 </ul>
             </div>
     </nav>   
@@ -160,47 +158,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                
-                <!-- Visualizar Tabuleiros -->
-                <?php
-                  $conn = new mysqli('localhost', 'root', 
-                  'dev@22', 'damas');
-
-                    $sql = " SELECT * FROM Tabuleiro ";
-                    $result = $conn->query( $sql ) or die( $conn->error() );
-                ?>    
-                
-                <div class="row justify-content-center">
-                    
-                <h5> Tabuleiros </h5>    
-                <!-- CABEÇALHO TABULEIRO -->
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th> Id do Item </th>
-                      <th> Nome do Item </th>
-                      <th> Descrição </th>
-                      <th> Valor (R$) </th>
-                    </tr>
-                 </thead>
-                 
-                <!-- WHILE PARA EXIBIR AS LINHAS DO BD DO TABULEIRO -->
-                <?php
-                while($row = $result->fetch_assoc() ): ?>
-                    <tr>
-                        <td> <?php echo $row['tab_id']; ?> </td>
-                        <td> <?php echo $row['nome']; ?> </td>
-                        <td> <?php echo $row['descricao']; ?> </td>
-                        <td> <?php echo $row['valor']; ?> </td>
-                    </tr>
-                <?php endwhile; ?>
-                
-                </table>
-                
-                <!-- Visualizar Peças -->
-                <h4> Peças </h4>
-                
-            </div>
+             </div>
               
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal"> Fechar </button>
