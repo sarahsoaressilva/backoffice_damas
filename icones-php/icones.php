@@ -104,13 +104,7 @@
  
     <!-- AREA DE EXIBIÇÃO DO BANCO DE DADOS -->
     <div class="container">
-    <?php
-      $conn = new mysqli('heroku_8e53453ac7a4cef', 'b83571dc6d5fc4', 
-      '90ed83fc', 'heroku_8e53453ac7a4cef');
-      
-      $result = $conn->query("SELECT * FROM Icones") or die( $conn->error() );
-    ?>
-     <div class="row justify-content-center">
+      <div class="row justify-content-center">
         <table class="table">
           <thead>
             <tr>
@@ -124,7 +118,14 @@
             </tr>
           </thead>
     <?php
-      while($row = $result->fetch_assoc() ): ?>
+        $conn = new mysqli('us-cdbr-east-05.cleardb.net', 'b83571dc6d5fc4', 
+            '90ed83fc', 'heroku_8e53453ac7a4cef');
+
+        $result = $conn->query("SELECT * FROM Icones") or die( $conn->error() );
+            
+        while($row = $result->fetch_assoc() ): 
+    ?>
+    
       <tr>
         <td> <?php echo $row['icones_id']; ?> </td>
         <td> <?php echo $row['nome']; ?> </td>

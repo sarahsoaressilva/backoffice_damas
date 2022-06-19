@@ -122,7 +122,7 @@
             </thead>
         
         <?php
-        $conn = new mysqli('heroku_8e53453ac7a4cef', 'b83571dc6d5fc4', 
+        $conn = new mysqli('us-cdbr-east-05.cleardb.net', 'b83571dc6d5fc4', 
         '90ed83fc', 'heroku_8e53453ac7a4cef');
         
         $result = $conn->query("SELECT * FROM tabuleiro") or die( $conn->error() );
@@ -147,6 +147,7 @@
             </td>
         </tr> 
         <?php endwhile; ?>
+
         </table>
       </div>
     </div>

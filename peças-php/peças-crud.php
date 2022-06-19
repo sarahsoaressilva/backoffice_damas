@@ -89,14 +89,7 @@
         </form>
     </div>
         
-    <div class="container">
-    <?php
-        $conn = new mysqli('heroku_8e53453ac7a4cef', 'b83571dc6d5fc4', 
-        '90ed83fc', 'heroku_8e53453ac7a4cef');
-        $result = $mysqli->query("SELECT * FROM Pecas") or die($mysqli->error);
-        //pre_r($result);
-    ?>
-        
+    <div class="container">        
         <div class="row justify-content-center">
             <table class="table">
                 <thread>
@@ -111,7 +104,15 @@
                 </thread>
                 
             <?php
-                while ($row = $result->fetch_assoc() ): ?>
+                $conn = new mysqli('us-cdbr-east-05.cleardb.net', 'b83571dc6d5fc4', 
+                '90ed83fc', 'heroku_8e53453ac7a4cef');
+
+                $result = $mysqli->query("SELECT * FROM pecas") or die($mysqli->error);
+                //pre_r($result);
+                
+                while ($row = $result->fetch_assoc() ): 
+                
+            ?>
                     <tr>
                         <td><?php echo $row['nome']; ?> </td>
                         <td><?php echo $row['descricao']; ?> </td>

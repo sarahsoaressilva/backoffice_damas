@@ -96,12 +96,6 @@
  
     <!-- AREA DE EXIBIÇÃO DE ITENS -->
     <div class="container">
-    <?php
-      $conn = new mysqli('heroku_8e53453ac7a4cef', 'b83571dc6d5fc4', 
-      '90ed83fc', 'heroku_8e53453ac7a4cef');
-      
-      $result = $conn->query("SELECT * FROM Planos") or die( $conn->error() );
-    ?>
      <div class="row justify-content-center">
         <table class="table">
           <thead>
@@ -114,8 +108,16 @@
               <th> Ações </th>
             </tr>
           </thead>
-        <?php
-          while($row = $result->fetch_assoc() ): ?>
+      
+          <?php
+          $conn = new mysqli('us-cdbr-east-05.cleardb.net', 'b83571dc6d5fc4', 
+          '90ed83fc', 'heroku_8e53453ac7a4cef');
+
+          $result = $conn->query("SELECT * FROM planos") or die( $conn->error() );
+          
+          while($row = $result->fetch_assoc() ): 
+          ?>
+
           <tr>
             <td> <?php echo $row['plano_id']; ?> </td>
             <td> <?php echo $row['nome']; ?> </td>
