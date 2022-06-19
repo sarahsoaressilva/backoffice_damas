@@ -80,10 +80,6 @@
         
         $mysqli->query("UPDATE Pecas SET nome='$nome', descricao='$descricao', valor='$valor', img='$img', plano_id='$plano_id' WHERE peca_id=$peca_id") or die( $mysqli->error() );
         
-        if($plano_id > 0) {
-            $mysqli->query("UPDATE Planos_Itens SET fk_nome_item='$nome' WHERE fk_id_item=$peca_id ") 
-            or die( $mysqli->error() );
-        }
         
         header("location: peças-crud.php");
     }

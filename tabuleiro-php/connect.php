@@ -23,7 +23,7 @@
         $plano_id = $_POST['plano_id'];
         
         //Realiza INSERT das informações na tabela.
-        $conn->query("INSERT INTO Tabuleiro (nome, descricao, valor, img, plano_id)
+        $conn->query("INSERT INTO tabuleiro (nome, descricao, valor, img, plano_id)
         VALUES ('$nome', '$descricao', '$valor', '$img', '$plano_id') ") or die( $conn->error() );
         
        
@@ -48,7 +48,7 @@
         
         $update = true;
         
-        $result = $conn->query("SELECT * FROM Tabuleiro WHERE tab_id=$tab_id") or die( $conn->error() );
+        $result = $conn->query("SELECT * FROM tabuleiro WHERE tab_id=$tab_id") or die( $conn->error() );
       
         $row = $result->fetch_array();
         
@@ -61,7 +61,7 @@
             $plano_id = $row['plano_id'];
         }
         
-        header("location: tabuleiro.php");
+        //header("location: tabuleiro.php");
         
     }    //Fim EDIT
         
@@ -74,7 +74,7 @@
         $img = $_POST['img'];
         $plano_id = $_POST['plano_id'];
             
-        $conn->query("UPDATE Tabuleiro SET nome='$nome', descricao='$descricao', valor='$valor', img='$img', plano_id='$plano_id' WHERE tab_id=$tab_id") or die( $conn->error() );
+        $conn->query("UPDATE tabuleiro SET nome='$nome', descricao='$descricao', valor='$valor', img='$img', plano_id='$plano_id' WHERE tab_id=$tab_id") or die( $conn->error() );
       
         
         header("location: tabuleiro.php");
