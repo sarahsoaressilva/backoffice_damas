@@ -100,7 +100,7 @@
      
       //echo $imprimir;
       
-      $imprimir .= " 
+      $imprimir = " 
         <div class='container'>
            <h4> Tabuleiro </h4>
         <div class='row justify-content-center'>
