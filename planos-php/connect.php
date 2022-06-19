@@ -104,7 +104,7 @@
       ";
       // ---------------------------------------- Tabuleiros
      
-      echo $imprimir;
+      //echo $imprimir;
       
       $imprimir .= " 
         <div class='container'>
@@ -125,7 +125,7 @@
               </thead>
       ";
 
-      echo $imprimir;
+      //echo $imprimir;
 
       // Consulta do Tabuleiro
       $sql = " SELECT * FROM tabuleiro WHERE plano_id=$plano_id";
@@ -146,7 +146,7 @@
           </tr>
         ";
 
-        echo $imprimir;
+        //echo $imprimir;
       }
 
       $imprimir .= '
@@ -155,7 +155,7 @@
       </div>
       ';
 
-      echo $imprimir;
+      //echo $imprimir;
       
       // ---------------------------------------- Peças
       $imprimir .= " 
@@ -176,7 +176,7 @@
               </thead>
       ";
 
-      echo $imprimir;
+      //echo $imprimir;
 
       // Consulta das Peças
       $sql = " SELECT * FROM Pecas WHERE plano_id=$plano_id";
@@ -196,7 +196,7 @@
           </tr>
         ";
 
-        echo $imprimir;
+        //echo $imprimir;
       }
 
       $imprimir .= '
@@ -205,7 +205,7 @@
       </div>
       ';
 
-      echo $imprimir;
+      //echo $imprimir;
 
       // ---------------------------------------- Icones
 
@@ -227,7 +227,7 @@
               </thead>
       ";
 
-      echo $imprimir;
+      //echo $imprimir;
 
       // Consulta das Icones
       $sql = " SELECT * FROM Icones WHERE plano_id=$plano_id";
@@ -248,7 +248,7 @@
           </tr>
         ";
 
-        echo $imprimir;
+        //echo $imprimir;
       }
 
       $imprimir .= '
@@ -257,6 +257,6 @@
       </div>
       ';
 
-      echo $imprimir;
+      //echo $imprimir;
     } 
   

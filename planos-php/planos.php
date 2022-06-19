@@ -146,6 +146,7 @@
       </div>
     </div>
 
+    <!-- AREA DO MODAL -->
 
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog" role="document">
