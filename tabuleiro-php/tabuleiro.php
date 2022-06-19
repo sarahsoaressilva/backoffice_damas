@@ -108,43 +108,43 @@
  
     <!-- AREA DE EXIBIÇÃO DA TABELA DO BANCO DE DADOS -->
     <div class="container">
-    <?php
-      $conn = new mysqli('heroku_8e53453ac7a4cef', 'b83571dc6d5fc4', 
-      '90ed83fc', 'heroku_8e53453ac7a4cef');
-      
-      $result = $conn->query("SELECT * FROM Tabuleiro") or die( $conn->error() );
-    ?>
-     <div class="row justify-content-center">
-        <table class="table">
-          <thead>
-            <tr>
-              <th> Nome do Tabuleiro </th>
-              <th> Descrição </th>
-              <th> Valor (R$) </th>
-              <th> Imagem </th>
-              <th> Id do Plano </th>
-              <th> Ações </th>
-            </tr>
-          </thead>
-    <?php
-      while($row = $result->fetch_assoc() ): ?>
-      <tr>
-        <td> <?php echo $row['nome']; ?> </td>
-        <td> <?php echo $row['descricao']; ?> </td>
-        <td> <?php echo $row['valor']; ?> </td>
-        <td> <img src="<?php echo $row['img']; ?>" width="100" height="100"> </td>
-        <td> <?php echo $row['plano_id']; ?> </td>
-        <td> 
-            <a href="tabuleiro.php?edit=<?php echo $row['tab_id']; ?>"
-            class="btn btn-info"> 
-            Editar 
-            </a> 
+        <?php
+        $conn = new mysqli('heroku_8e53453ac7a4cef', 'b83571dc6d5fc4', 
+        '90ed83fc', 'heroku_8e53453ac7a4cef');
+        
+        $result = $conn->query("SELECT * FROM tabuleiro") or die( $conn->error() );
+        ?>
+        <div class="row justify-content-center">
+            <table class="table">
+            <thead>
+                <tr>
+                <th> Nome do Tabuleiro </th>
+                <th> Descrição </th>
+                <th> Valor (R$) </th>
+                <th> Imagem </th>
+                <th> Id do Plano </th>
+                <th> Ações </th>
+                </tr>
+            </thead>
+        <?php
+        while($row = $result->fetch_assoc() ): ?>
+        <tr>
+            <td> <?php echo $row['nome']; ?> </td>
+            <td> <?php echo $row['descricao']; ?> </td>
+            <td> <?php echo $row['valor']; ?> </td>
+            <td> <img src="<?php echo $row['img']; ?>" width="100" height="100"> </td>
+            <td> <?php echo $row['plano_id']; ?> </td>
+            <td> 
+                <a href="tabuleiro.php?edit=<?php echo $row['tab_id']; ?>"
+                class="btn btn-info"> 
+                Editar 
+                </a> 
 
-            <a href="tabuleiro.php?delete=<?php echo $row['tab_id']; ?>" class="btn btn-danger" > Deletar </a> 
-            
-        </td>
-      </tr> 
-    <?php endwhile; ?>
+                <a href="tabuleiro.php?delete=<?php echo $row['tab_id']; ?>" class="btn btn-danger" > Deletar </a> 
+                
+            </td>
+        </tr> 
+        <?php endwhile; ?>
         </table>
       </div>
     </div>
