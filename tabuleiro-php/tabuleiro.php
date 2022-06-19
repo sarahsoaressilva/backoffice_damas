@@ -47,60 +47,54 @@
     
     
     <!-- FORMULÁRIO -->
-        <div class="container">
-            <div class="row align-items-start">   
-            <form action="connect.php" method="POST">
-                <input type='hidden' name='tab_id' value="<?php echo $tab_id; ?> " >
-                <div class="form-group">
-                    <label> Nome do Tabuleiro </label>
-                    <input type="text" class="form-control form-control-sm" name="nome" 
-                    value="<?php echo $nome; ?>" >
-                </div>
-                    
-                <div class="form-group">
-                    <label> Descrição </label>
-                    <input type="text" class="form-control" name="descricao" 
-                    value="<?php echo $descricao; ?>" >
-                </div>
-                    
-                <div class="form-group">
-                    <label> Valor </label>
-                    <input type="number" step='0.01' class="form-control" name="valor" 
-                    placeholder="0"
-                    value="<?php echo $valor; ?>" >
-                </div> 
-        
-                <div class="form-group">
-                    <label> Link da Imagem </label>
-                    <input type="blob" class="form-control" 
-                    name="img" value="<?php echo $img; ?>" >
-                </div>
+    <div class="container">
+        <div class="row align-items-start">   
+        <form action="connect.php" method="POST">
+            <input type='hidden' name='tab_id' value="<?php echo $tab_id; ?> " >
+            <div class="form-group">
+                <label> Nome do Tabuleiro </label>
+                <input type="text" class="form-control form-control-sm" name="nome" 
+                value="<?php echo $nome; ?>" >
+            </div>
                 
-                <div class="form-group">
-                    <label> Id do Plano </label>
-                    <input type="number" class="form-control" name="plano_id" 
-                    value="<?php echo $plano_id; ?>" >
-                </div> 
-            
-                <div class="form-group">
-                    
-                <?php
-                if($update == true):
-                ?>
-                    <button type="submit" name="update" class="btn btn-info"> 
-                    Editar 
-                    </button>
-                <?php else: ?>
-                    <button type="submit" name="save" class="btn btn-primary"> 
-                    Salvar 
-                    </button>
-                <?php endif; ?>
-                    
-                </div>
-            </form>
-        </div> 
+            <div class="form-group">
+                <label> Descrição </label>
+                <input type="text" class="form-control" name="descricao" 
+                value="<?php echo $descricao; ?>" >
+            </div>
+                
+            <div class="form-group">
+                <label> Valor </label>
+                <input type="number" step='0.01' class="form-control" name="valor" 
+                placeholder="0"
+                value="<?php echo $valor; ?>" >
+            </div> 
     
-   
+            <div class="form-group">
+                <label> Link da Imagem </label>
+                <input type="blob" class="form-control" 
+                name="img" value="<?php echo $img; ?>" >
+            </div>
+            
+            <div class="form-group">
+                <label> Id do Plano </label>
+                <input type="number" class="form-control" name="plano_id" 
+                value="<?php echo $plano_id; ?>" >
+            </div> 
+        
+            <div class="form-group">
+            <?php
+            if($update == true):
+            ?>
+                <button type="submit" class="btn btn-info" name="update"> Editar </button>
+            <?php else: ?>
+                <button type="submit" class="btn btn-primary" name="save"> Salvar </button>
+            <?php endif; ?>   
+            </div>
+        </form>
+    </div> 
+
+
     <br>
     <br>
  
