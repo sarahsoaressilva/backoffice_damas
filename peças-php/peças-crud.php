@@ -91,7 +91,8 @@
         
     <div class="container">
     <?php
-        $mysqli = new mysqli('localhost', 'id18872188_damas_backoffice', 'Z1R0J6m4e<1Y?F', 'id18872188_damas');
+        $conn = new mysqli('heroku_8e53453ac7a4cef', 'b83571dc6d5fc4', 
+        '90ed83fc', 'heroku_8e53453ac7a4cef');
         $result = $mysqli->query("SELECT * FROM Pecas") or die($mysqli->error);
         //pre_r($result);
     ?>

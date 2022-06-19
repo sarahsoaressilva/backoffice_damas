@@ -7,10 +7,10 @@
     $valor = 0;
     $update = false;
     
-    $servername = "localhost";
-    $username = "id18872188_damas_backoffice";
-    $password = "Z1R0J6m4e<1Y?F";
-    $database = "id18872188_damas";
+    $servername = "us-cdbr-east-05.cleardb.net";
+    $username = "b83571dc6d5fc4";
+    $password = "90ed83fc";
+    $database = "heroku_8e53453ac7a4cef";
     
     // Create connection
     $conn = new mysqli($servername, $username, $password, $database);
