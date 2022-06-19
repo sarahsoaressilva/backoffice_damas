@@ -90,6 +90,7 @@
     if ( isset($_GET['itens']) ) {
       $plano_id = $_GET['itens'];
 
+      header("location: exibe.php");
       // ---------------------------------------- Tabuleiros
      
       
@@ -115,7 +116,7 @@
       echo $imprimir;
 
       // Consulta do Tabuleiro
-      $sql = " SELECT * FROM Tabuleiro WHERE plano_id=$plano_id";
+      $sql = " SELECT * FROM tabuleiro WHERE plano_id=$plano_id";
       $result = $conn->query($sql) or die( $conn->error() );
 
       // Imprime dados do Tabuleiro
