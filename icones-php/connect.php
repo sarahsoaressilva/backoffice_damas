@@ -1,12 +1,8 @@
 <?php
 
     $icones_id = 0;
-    $nome = '';
-    $descricao = '';
     $valor = 0;
-    $img = '';
     $update = false;
-    
     
     $servername = "us-cdbr-east-05.cleardb.net";
     $username = "b83571dc6d5fc4";
@@ -24,15 +20,8 @@
         $img = $_POST['img'];
         $plano_id = $_POST['plano_id'];
         
-        $conn->query("INSERT INTO Icones (nome, descricao, valor, img, plano_id)
+        $conn->query("INSERT INTO icones (nome, descricao, valor, img, plano_id)
         VALUES ('$nome', '$descricao', '$valor', '$img', '$plano_id') ") or die( $conn->error() );
-        
-        if($plano_id > 0) {
-            $icones_id = $_POST['icones_id']+1;
-
-            $conn->query("INSERT INTO Planos_Itens (fk_id_item, fk_id_plano, fk_nome_item, tipo_item)
-            VALUES ('$icones_id', '$plano_id', '$nome', 'icone') ") or die( $conn->error() );
-        }
         
         header("location: icones.php");
         
@@ -42,10 +31,8 @@
     if ( isset($_GET['delete']) ) {
         $icones_id = $_GET['delete'];
         
-        $conn->query("DELETE FROM Icones WHERE icones_id=$icones_id") or die( $conn->error() );
-        
-        $conn->query("DELETE FROM Planos_Itens WHERE fk_id_item=$icones_id ") or die( $conn->error() );
-        
+        $conn->query("DELETE FROM icones WHERE icones_id=$icones_id") or die( $conn->error() );
+                
         header("location: icones.php");
         
     } //Fim DELETE
@@ -55,11 +42,10 @@
         $icones_id = $_GET['edit'];
         $update = true;
         
-        $result = $conn->query("SELECT * FROM Icones WHERE icones_id=$icones_id") or die( $conn->error() );
+        $result = $conn->query("SELECT * FROM icones WHERE icones_id=$icones_id") or die( $conn->error() );
       
-        $row = $result->fetch_array();
-        
         if( count( array ($result) ) == 1 ) {
+            $row = $result->fetch_array();
             $icones_id = $row['icones_id'];
             $nome = $row['nome'];
             $descricao = $row['descricao'];
@@ -81,14 +67,10 @@
         $img = $_POST['img'];
         $plano_id = $_POST['plano_id'];
             
-        $conn->query("UPDATE Icones 
+        $conn->query("UPDATE icones 
         SET nome='$nome', descricao='$descricao', valor='$valor', img='$img', plano_id='$plano_id' 
         WHERE icones_id=$icones_id") or die( $conn->error() );
         
-        if($plano_id > 0) {
-            $conn->query("UPDATE Planos_Itens SET fk_nome_item='$nome' WHERE fk_id_item=$icones_id ") or die( $conn->error());
-        }
-
         header("location: icones.php");
             
     } //Fim UPDATE

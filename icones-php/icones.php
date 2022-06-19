@@ -108,7 +108,6 @@
         <table class="table">
           <thead>
             <tr>
-              <th> Id do Icone </th>
               <th> Nome do Icone </th>
               <th> Descrição </th>
               <th> Valor (R$) </th>
@@ -127,7 +126,6 @@
     ?>
     
       <tr>
-        <td> <?php echo $row['icones_id']; ?> </td>
         <td> <?php echo $row['nome']; ?> </td>
         <td> <?php echo $row['descricao']; ?> </td>
         <td> <?php echo $row['valor']; ?> </td>
