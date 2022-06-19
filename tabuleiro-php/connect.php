@@ -38,7 +38,7 @@
     if ( isset($_GET['delete']) ) {
         $tab_id = $_GET['delete'];
         
-        $conn->query("DELETE FROM Tabuleiro WHERE tab_id=$tab_id") or die( $conn->error() );
+        $conn->query("DELETE FROM tabuleiro WHERE tab_id=$tab_id") or die( $conn->error() );
         
         header("location: tabuleiro.php");
         

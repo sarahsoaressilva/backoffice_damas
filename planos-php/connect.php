@@ -34,9 +34,13 @@
     if ( isset($_GET['delete']) ) {
         $plano_id = $_GET['delete'];
         
+        $conn->query("UPDATE tabuleiro SET plano_id=0 WHERE plano_id=$plano_id") or die( $conn->error() );
+        $conn->query("UPDATE pecas SET plano_id=0 WHERE plano_id=$plano_id") or die( $conn->error() );
+        $conn->query("UPDATE icones SET plano_id=0 WHERE plano_id=$plano_id") or die( $conn->error() );
+        
         $conn->query("DELETE FROM Planos WHERE plano_id=$plano_id") or die( $conn->error() );
         
-        $conn->query("DELETE FROM Planos_Itens WHERE fk_id_plano=$plano_id") or die( $conn->error() );
+       
         
         header("location: planos.php");
         
@@ -90,9 +94,17 @@
     if ( isset($_GET['itens']) ) {
       $plano_id = $_GET['itens'];
 
-      header("location: exibe.php");
+      $imprimir = "
+      <script> 
+        $(function() {
+          $('#myModal').modal('show');
+        });
+      </script>
+      
+      ";
       // ---------------------------------------- Tabuleiros
      
+      echo $imprimir;
       
       $imprimir = " 
         <div class='container'>
