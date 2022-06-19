@@ -94,14 +94,8 @@
     if ( isset($_GET['itens']) ) {
       $plano_id = $_GET['itens'];
 
-      $imprimir = "
-      <script> 
-        $(function() {
-          $('#myModal').modal('show');
-        });
-      </script>
-      
-      ";
+      header("location: exibe.php");
+
       // ---------------------------------------- Tabuleiros
      
       //echo $imprimir;
