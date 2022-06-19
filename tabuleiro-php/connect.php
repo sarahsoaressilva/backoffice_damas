@@ -4,15 +4,15 @@
     $username = "b83571dc6d5fc4";
     $password = "90ed83fc";
     $database = "heroku_8e53453ac7a4cef";
+    
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $database);
 
     $tab_id = 0;
     $valor = 0;
     $plano_id = 0;
     $update = false;
     
-    
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $database);
 
     // Método de INSERT 
     if ( isset($_POST['save']) ) {
@@ -25,8 +25,6 @@
         //Realiza INSERT das informações na tabela.
         $conn->query("INSERT INTO tabuleiro (nome, descricao, valor, img, plano_id)
         VALUES ('$nome', '$descricao', '$valor', '$img', '$plano_id') ") or die( $conn->error() );
-        
-       
         
         header("location: tabuleiro.php");
         
@@ -49,11 +47,9 @@
         $update = true;
         
         $result = $conn->query("SELECT * FROM tabuleiro WHERE tab_id=$tab_id") or die( $conn->error() );
-      
-        $row = $result->fetch_array();
         
         if( count( array ($result) ) == 1 ) {
-            $tab_id = $row['tab_id'];
+            $row = $result->fetch_array();
             $nome = $row['nome'];
             $descricao = $row['descricao'];
             $valor = $row['valor'];

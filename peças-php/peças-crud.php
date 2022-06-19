@@ -95,9 +95,9 @@
                 <thread>
                     <tr>
                         <th> Nome da peça </th>
-                        <th> Descrição da peça </th>
-                        <th> Valor da peça </th>
-                        <th> Link da imagem da peça </th>
+                        <th> Descrição </th>
+                        <th> Valor  </th>
+                        <th> Link da imagem </th>
                         <th> Id do Plano </th>
                         <th> Ação </th>
                     </tr>
@@ -120,9 +120,11 @@
                         <td> <img src="<?php echo $row['img']; ?>" width="100" height="100">  </td>
                         <td><?php echo $row['plano_id']; ?></td>
                         <td>
-                            <a href="peças-crud.php?edit=<?php echo $row['peca_id']; ?> " class="btn btn-info">Editar</a>
+                            <a href="peças-crud.php?edit=<?php echo $row['peca_id']; ?> " 
+                            class="btn btn-info">Editar</a>
                             
-                            <a href="peças-crud.php?delete=<?php echo $row['peca_id']; ?>" class="btn btn-danger">Deletar</a>
+                            <a href="peças-crud.php?delete=<?php echo $row['peca_id']; ?>" 
+                            class="btn btn-danger">Deletar</a>
                         </td>
                     </tr>
             <?php endwhile; ?>
@@ -131,16 +133,6 @@
     </div>
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
