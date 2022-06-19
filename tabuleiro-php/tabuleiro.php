@@ -97,52 +97,45 @@
     <br>
  
     <!-- AREA DE EXIBIÇÃO DA TABELA DO BANCO DE DADOS -->
-    <div class="container">
+    <div class="container">        
         <div class="row justify-content-center">
             <table class="table">
-            <thead>
-                <tr>
-                <th> Nome do Tabuleiro </th>
-                <th> Descrição </th>
-                <th> Valor (R$) </th>
-                <th> Imagem </th>
-                <th> Id do Plano </th>
-                <th> Ações </th>
-                </tr>
-            </thead>
-        
-        <?php
-        $conn = new mysqli('us-cdbr-east-05.cleardb.net', 'b83571dc6d5fc4', 
-        '90ed83fc', 'heroku_8e53453ac7a4cef');
-        
-        $result = $conn->query("SELECT * FROM tabuleiro") or die( $conn->error() );
-
-        while($row = $result->fetch_assoc() ): 
-        
-        ?>
-        <tr>
-            <td> <?php echo $row['nome']; ?> </td>
-            <td> <?php echo $row['descricao']; ?> </td>
-            <td> <?php echo $row['valor']; ?> </td>
-            <td> <img src="<?php echo $row['img']; ?>" width="100" height="100"> </td>
-            <td> <?php echo $row['plano_id']; ?> </td>
-            <td> 
-                <a href="tabuleiro.php?edit=<?php echo $row['tab_id']; ?>"
-                class="btn btn-info"> 
-                Editar 
-                </a> 
-
-                <a href="tabuleiro.php?delete=<?php echo $row['tab_id']; ?>" 
-                class="btn btn-danger" > 
-                Deletar 
-                </a> 
+                <thread>
+                    <tr>
+                        <th> Nome do Tabuleiro </th>
+                        <th> Descrição  </th>
+                        <th> Valor </th>
+                        <th> Link da imagem </th>
+                        <th> Id do Plano </th>
+                        <th> Ação </th>
+                    </tr>
+                </thread>
                 
-            </td>
-        </tr> 
-        <?php endwhile; ?>
+            <?php
+                $conn = new mysqli('us-cdbr-east-05.cleardb.net', 'b83571dc6d5fc4', 
+                '90ed83fc', 'heroku_8e53453ac7a4cef');
 
-        </table>
-      </div>
+                $result = $mysqli->query("SELECT * FROM tabuleiro") or die($mysqli->error);
+                //pre_r($result);
+                
+                while ($row = $result->fetch_assoc() ): 
+                
+            ?>
+                    <tr>
+                        <td><?php echo $row['nome']; ?> </td>
+                        <td><?php echo $row['descricao']; ?> </td>
+                        <td><?php echo $row['valor']; ?> </td>
+                        <td> <img src="<?php echo $row['img']; ?>" width="100" height="100">  </td>
+                        <td><?php echo $row['plano_id']; ?></td>
+                        <td>
+                            <a href="peças-crud.php?edit=<?php echo $row['tab_id']; ?> " class="btn btn-info">Editar</a>
+                            
+                            <a href="peças-crud.php?delete=<?php echo $row['tab_id']; ?>" class="btn btn-danger">Deletar</a>
+                        </td>
+                    </tr>
+            <?php endwhile; ?>
+            </table>
+        </div>
     </div>
     
     <!-- CODIGOS JAVASCRIPT DO BOOTSTRAP -->
