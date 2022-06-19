@@ -148,23 +148,7 @@
 
     <!-- AREA DO MODAL -->
 
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"> Ver itens </h4>
-                </div>
-                <div class="modal-body">
-                    
-                
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal"> Close </button>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     
     <!-- CODIGOS JAVASCRIPT DO BOOTSTRAP -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
