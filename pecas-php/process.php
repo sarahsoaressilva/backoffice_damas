@@ -1,9 +1,9 @@
 <?php
 
     $servername = "localhost";
-    $username = "root";
-    $password = "dev@22";
-    $database = "damas";
+    $username = "id18872188_damas_backoffice";
+    $password = "Z1R0J6m4e<1Y?F";
+    $database = "id18872188_damas";
     
     // Create connection
     $mysqli = new mysqli($servername, $username, $password, $database);
@@ -26,6 +26,11 @@
         $mysqli->query("INSERT INTO Pecas (nome, descricao, valor, img, plano_id) 
         VALUES('$nome',  '$descricao', '$valor', '$img', '$plano_id') ") or die($mysqli->error () );
         
+        if($plano_id > 0) {
+           $mysqli->query("INSERT INTO Planos_Itens (fk_id_item, fk_id_plano, fk_nome_item, tipo_item)
+            VALUES ('$peca_id', '$plano_id', '$nome', 'peça') ") or die( $mysqli->error() );
+        }
+        
         header("location: peças-crud.php");
         
         
@@ -34,7 +39,9 @@
     if ( isset($_GET['delete']) ) {
         $peca_id = $_GET['delete'];
         $mysqli->query("DELETE FROM Pecas WHERE peca_id=$peca_id") or die($mysqli->error());
-      
+        
+        $mysqli->query("DELETE FROM Planos_Itens WHERE fk_id_item=$peca_id ") or die( $mysqli->error() );
+        
         //perguntar o pq ta dando erro aqui quando tenta deletar
         //CORRIGIDO
         
@@ -72,6 +79,11 @@
         $plano_id = $_POST['plano_id'];
         
         $mysqli->query("UPDATE Pecas SET nome='$nome', descricao='$descricao', valor='$valor', img='$img', plano_id='$plano_id' WHERE peca_id=$peca_id") or die( $mysqli->error() );
+        
+        if($plano_id > 0) {
+            $mysqli->query("UPDATE Planos_Itens SET fk_nome_item='$nome' WHERE fk_id_item=$peca_id ") 
+            or die( $mysqli->error() );
+        }
         
         header("location: peças-crud.php");
     }

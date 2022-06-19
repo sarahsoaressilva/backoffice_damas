@@ -37,7 +37,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/planos-php/planos.php"> Planos </a>
                     </li>
-                 
+                   
                 </ul>
             </div>
     </nav>   
@@ -105,8 +105,8 @@
     <!-- AREA DE EXIBIÇÃO DO BANCO DE DADOS -->
     <div class="container">
     <?php
-      $conn = new mysqli('localhost', 'root', 
-      'dev@22', 'damas');;
+      $conn = new mysqli('localhost', 'id18872188_damas_backoffice', 
+      'Z1R0J6m4e<1Y?F', 'id18872188_damas');
       
       $result = $conn->query("SELECT * FROM Icones") or die( $conn->error() );
     ?>

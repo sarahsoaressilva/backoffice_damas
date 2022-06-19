@@ -1,6 +1,6 @@
 <?php
 
-    $icones_id = 0;
+    $tab_id = 0;
     $nome = '';
     $descricao = '';
     $valor = 0;
@@ -8,12 +8,10 @@
     $plano_id = 0;
     $update = false;
     
-    
     $servername = "localhost";
-    $username = "root";
-    $password = "dev@22";
-    $database = "damas";
-    
+    $username = "id18872188_damas_backoffice";
+    $password = "Z1R0J6m4e<1Y?F";
+    $database = "id18872188_damas";
     
     // Create connection
     $conn = new mysqli($servername, $username, $password, $database);
@@ -26,35 +24,38 @@
         $img = $_POST['img'];
         $plano_id = $_POST['plano_id'];
         
-        $conn->query("INSERT INTO Icones (nome, descricao, valor, img, plano_id)
+        //Realiza INSERT das informações na tabela.
+        $conn->query("INSERT INTO Tabuleiro (nome, descricao, valor, img, plano_id)
         VALUES ('$nome', '$descricao', '$valor', '$img', '$plano_id') ") or die( $conn->error() );
         
-        header("location: icones.php");
-    }    
-    //Fim INSERT
+       
+        
+        header("location: tabuleiro.php");
+        
+    } //Fim INSERT
     
     // Método de DELETE 
     if ( isset($_GET['delete']) ) {
-        $icones_id = $_GET['delete'];
+        $tab_id = $_GET['delete'];
         
-        $conn->query("DELETE FROM Icones WHERE icones_id=$icones_id") or die( $conn->error() );
+        $conn->query("DELETE FROM Tabuleiro WHERE tab_id=$tab_id") or die( $conn->error() );
         
-        header("location: icones.php");
+        header("location: tabuleiro.php");
         
     } //Fim DELETE
     
     // Método de EDIT
     if ( isset($_GET['edit']) ) {
-        $icones_id = $_GET['edit'];
+        $tab_id = $_GET['edit'];
+        
         $update = true;
         
-        $result = $conn->query("SELECT * FROM Icones WHERE icones_id=$icones_id") 
-        or die( $conn->error() );
+        $result = $conn->query("SELECT * FROM Tabuleiro WHERE tab_id=$tab_id") or die( $conn->error() );
       
         $row = $result->fetch_array();
         
         if( count( array ($result) ) == 1 ) {
-            $icones_id = $row['icones_id'];
+            $tab_id = $row['tab_id'];
             $nome = $row['nome'];
             $descricao = $row['descricao'];
             $valor = $row['valor'];
@@ -62,24 +63,23 @@
             $plano_id = $row['plano_id'];
         }
         
-        header("location: icones.php");
+        header("location: tabuleiro.php");
         
     }    //Fim EDIT
         
     // Método de UPDATE 
     if ( isset($_POST['update']) ) {
-        $icones_id = $_POST['icones_id'];
+        $tab_id = $_POST['tab_id'];
         $nome = $_POST['nome'];
         $descricao = $_POST['descricao'];
         $valor = $_POST['valor'];
         $img = $_POST['img'];
         $plano_id = $_POST['plano_id'];
             
-        $conn->query("UPDATE Icones 
-        SET nome='$nome', descricao='$descricao', valor='$valor', img='$img', plano_id='$plano_id' 
-        WHERE icones_id=$icones_id") or die( $conn->error() );
-    
-        header("location: icones.php");
+        $conn->query("UPDATE Tabuleiro SET nome='$nome', descricao='$descricao', valor='$valor', img='$img', plano_id='$plano_id' WHERE tab_id=$tab_id") or die( $conn->error() );
+      
+        
+        header("location: tabuleiro.php");
             
     } //Fim UPDATE
-     
+        

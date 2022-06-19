@@ -34,7 +34,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/planos-php/planos.php"> Planos </a>
                     </li>
-                  
+                 
                 </ul>
             </div>
     </nav> 
@@ -91,9 +91,7 @@
         
     <div class="container">
     <?php
-        $mysqli = new mysqli('localhost', 'root', 
-        'dev@22', 'damas');
-        
+        $mysqli = new mysqli('localhost', 'id18872188_damas_backoffice', 'Z1R0J6m4e<1Y?F', 'id18872188_damas');
         $result = $mysqli->query("SELECT * FROM Pecas") or die($mysqli->error);
         //pre_r($result);
     ?>

@@ -37,7 +37,7 @@
                      <li class="nav-item active">
                         <a class="nav-link" href="/planos-php/planos.php"> Planos </a>
                     </li>
-                  
+              
                 </ul>
             </div>
     </nav>   
@@ -97,8 +97,8 @@
     <!-- AREA DE EXIBIÇÃO DE ITENS -->
     <div class="container">
     <?php
-      $conn = new mysqli('localhost', 'root', 
-      'dev@22', 'damas');
+      $conn = new mysqli('localhost', 'id18872188_damas_backoffice', 
+      'Z1R0J6m4e<1Y?F', 'id18872188_damas');
       
       $result = $conn->query("SELECT * FROM Planos") or die( $conn->error() );
     ?>
@@ -123,9 +123,9 @@
             <td> <?php echo $row['tipo']; ?> </td>
             <td> <?php echo $row['valor']; ?> </td>
             <td> 
-                <a href="planos.php?edit=<?php echo $row['plano_id']; ?>" class="btn btn-info" > Editar </a> 
+                <a href="planos.php?edit=<?php echo $row['plano_id']; ?>" class="btn btn-info"> Editar </a> 
     
-                <a href="planos.php?delete=<?php echo $row['plano_id']; ?>" class="btn btn-danger"> Deletar </a> 
+                <a href="planos.php?delete=<?php echo $row['plano_id']; ?>" class="btn btn-danger" > Deletar </a> 
                 
                 <!-- Button trigger modal -->
                 <?php
@@ -135,6 +135,8 @@
                 <a href="planos.php?itens=<?php echo $id ?>" class="btn btn-outline-primary">
                 Ver Itens 
                 </a>
+                            
+                
             </td>
           </tr> 
         <?php endwhile; ?>

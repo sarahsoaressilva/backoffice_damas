@@ -37,7 +37,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/planos-php/planos.php"> Planos </a>
                     </li>
-                   
+                    
                 </ul>
             </div>
     </nav>   
@@ -109,8 +109,8 @@
     <!-- AREA DE EXIBIÇÃO DA TABELA DO BANCO DE DADOS -->
     <div class="container">
     <?php
-      $conn = new mysqli('localhost', 'root', 
-      'dev@22', 'damas');
+      $conn = new mysqli('localhost', 'id18872188_damas_backoffice', 
+      'Z1R0J6m4e<1Y?F', 'id18872188_damas');
       
       $result = $conn->query("SELECT * FROM Tabuleiro") or die( $conn->error() );
     ?>
@@ -140,8 +140,7 @@
             Editar 
             </a> 
 
-            <a href="tabuleiro.php?delete=<?php echo $row['tab_id']; ?>" 
-            class="btn btn-danger" > Deletar </a> 
+            <a href="tabuleiro.php?delete=<?php echo $row['tab_id']; ?>" class="btn btn-danger" > Deletar </a> 
             
         </td>
       </tr> 
