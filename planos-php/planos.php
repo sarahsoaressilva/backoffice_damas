@@ -11,6 +11,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <script src="exibeItens.js"> </script>
+    
     <!-- CONEXÃO PHP -->
     <?php require_once 'connect.php'; ?>  
 
@@ -133,7 +135,8 @@
                   $id = $row['plano_id'];
                 ?>
                 
-                <a href="planos.php?itens=<?php echo $id ?>" class="btn btn-outline-primary">
+                <a href="planos.php?itens=<?php echo $id ?>" 
+                class="btn btn-outline-primary" id="verItens" >
                 Ver Itens 
                 </a>
                             
@@ -144,10 +147,6 @@
         </table>
       </div>
     </div>
-
-    <!-- AREA DO MODAL -->
-
-    
     
     <!-- CODIGOS JAVASCRIPT DO BOOTSTRAP -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
