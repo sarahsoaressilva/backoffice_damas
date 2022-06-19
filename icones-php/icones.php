@@ -55,13 +55,13 @@
             <div class="form-group">
                 <label> Nome do Icone </label>
                 <input type="text" class="form-control form-control-sm" name="nome" 
-                value="<?php echo $nome; ?>" >
+                value="<?php echo $nome; ?>" placeholder="Icone Neymar">
             </div>
             
             <div class="form-group">
                 <label> Descrição </label>
                 <input type="text" class="form-control" name="descricao" 
-                value="<?php echo $descricao; ?>" >
+                value="<?php echo $descricao; ?>" placeholder="Icone Neymar">>
             </div>
             
             <div class="form-group">
@@ -73,7 +73,7 @@
             <div class="form-group">
                 <label> Link da Imagem </label>
                 <input type="blob" class="form-control" 
-                name="img" value="<?php echo $img; ?>" >
+                name="img" value="<?php echo $img; ?>" placeholder="https://..."> >
             </div>
             
             <div class="form-group">
@@ -110,7 +110,7 @@
             <tr>
               <th> Nome do Icone </th>
               <th> Descrição </th>
-              <th> Valor (R$) </th>
+              <th> Valor </th>
               <th> Imagem </th>
               <th> Id do Plano </th>
               <th> Ações </th>
@@ -120,7 +120,7 @@
         $conn = new mysqli('us-cdbr-east-05.cleardb.net', 'b83571dc6d5fc4', 
             '90ed83fc', 'heroku_8e53453ac7a4cef');
 
-        $result = $conn->query("SELECT * FROM Icones") or die( $conn->error() );
+        $result = $conn->query("SELECT * FROM icones") or die( $conn->error() );
             
         while($row = $result->fetch_assoc() ): 
     ?>

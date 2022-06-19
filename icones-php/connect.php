@@ -1,9 +1,5 @@
 <?php
 
-    $icones_id = 0;
-    $valor = 0;
-    $update = false;
-    
     $servername = "us-cdbr-east-05.cleardb.net";
     $username = "b83571dc6d5fc4";
     $password = "90ed83fc";
@@ -11,6 +7,11 @@
     
     // Create connection
     $conn = new mysqli($servername, $username, $password, $database);
+
+    $icones_id = 0;
+    $valor = 0;
+    $plano_id = 0;
+    $update = false;
 
     // Método de INSERT 
     if ( isset($_POST['save']) ) {
@@ -46,7 +47,6 @@
       
         if( count( array ($result) ) == 1 ) {
             $row = $result->fetch_array();
-            $icones_id = $row['icones_id'];
             $nome = $row['nome'];
             $descricao = $row['descricao'];
             $valor = $row['valor'];
