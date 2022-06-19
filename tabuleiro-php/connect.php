@@ -1,17 +1,15 @@
 <?php
 
-    $tab_id = 0;
-    $nome = '';
-    $descricao = '';
-    $valor = 0;
-    $img = '';
-    $plano_id = 0;
-    $update = false;
-    
     $servername = "us-cdbr-east-05.cleardb.net";
     $username = "b83571dc6d5fc4";
     $password = "90ed83fc";
     $database = "heroku_8e53453ac7a4cef";
+
+    $tab_id = 0;
+    $valor = 0;
+    $plano_id = 0;
+    $update = false;
+    
     
     // Create connection
     $conn = new mysqli($servername, $username, $password, $database);

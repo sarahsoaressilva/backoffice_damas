@@ -48,51 +48,49 @@
     
     <!-- FORMULÁRIO -->
     <div class="container">
-        <div class="row align-items-start">   
-        <form action="connect.php" method="POST">
-            <input type='hidden' name='tab_id' value="<?php echo $tab_id; ?> " >
-            <div class="form-group">
-                <label> Nome do Tabuleiro </label>
-                <input type="text" class="form-control form-control-sm" name="nome" 
-                value="<?php echo $nome; ?>" >
-            </div>
-                
-            <div class="form-group">
-                <label> Descrição </label>
-                <input type="text" class="form-control" name="descricao" 
-                value="<?php echo $descricao; ?>" >
-            </div>
-                
-            <div class="form-group">
-                <label> Valor </label>
-                <input type="number" step='0.01' class="form-control" name="valor" 
-                placeholder="0"
-                value="<?php echo $valor; ?>" >
-            </div> 
-    
-            <div class="form-group">
-                <label> Link da Imagem </label>
-                <input type="blob" class="form-control" 
-                name="img" value="<?php echo $img; ?>" >
-            </div>
-            
-            <div class="form-group">
+        <div class="row align-items-start">
+        <form action="process.php" method="POST">
+          <input type="hidden" name="tab_id" value="<?php echo $tab_id; ?>">
+          
+          <div class="form-group">
+          <label> Nome do Tabuleiro </label>
+          <input type="text" name="nome" class="form-control" 
+                 value="<?php echo $nome; ?>" placeholder="Tabuleiro Estrela">
+          </div>
+          <div class="form-group">
+          <label> Descrição do Tabuleiro </label>
+          <input type="text" name="descricao" class="form-control" 
+                 value="<?php echo $descricao; ?>" placeholder="Tabuleiro composto por...">
+          </div>
+          <div class="form-group">
+          <label> Valor </label>
+          <input type="number" name="valor" class="form-control"
+                 value="<?php echo $valor; ?>" >
+          </div>
+          <div class="form-group">
+          <label> Link da Imagem  </label>
+          <input type="text" name="img" class="form-control" 
+                 value="<?php echo $img; ?>" placeholder="https:// ">
+          </div>
+          
+          <div class="form-group">
                 <label> Id do Plano </label>
                 <input type="number" class="form-control" name="plano_id" 
                 value="<?php echo $plano_id; ?>" >
-            </div> 
-        
-            <div class="form-group">
-            <?php
-            if($update == true):
-            ?>
-                <button type="submit" class="btn btn-info" name="update"> Editar </button>
-            <?php else: ?>
-                <button type="submit" class="btn btn-primary" name="save"> Salvar </button>
-            <?php endif; ?>   
-            </div>
+          </div> 
+          
+          
+          <div class="form-group">
+          <?php 
+          if ($update == true):
+          ?>
+            <button type="submit" class="btn btn-info" name="update"> Editar </button>
+          <?php else: ?>
+            <button type="submit" class="btn btn-primary" name="save"> Salvar </button>
+          <?php endif; ?>
+          </div>
         </form>
-    </div> 
+    </div>
 
 
     <br>
@@ -134,7 +132,10 @@
                 Editar 
                 </a> 
 
-                <a href="tabuleiro.php?delete=<?php echo $row['tab_id']; ?>" class="btn btn-danger" > Deletar </a> 
+                <a href="tabuleiro.php?delete=<?php echo $row['tab_id']; ?>" 
+                class="btn btn-danger" > 
+                Deletar 
+                </a> 
                 
             </td>
         </tr> 
