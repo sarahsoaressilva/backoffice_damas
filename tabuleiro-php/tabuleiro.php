@@ -49,7 +49,7 @@
     <!-- FORMULÁRIO -->
     <div class="container">
         <div class="row align-items-start">
-        <form action="process.php" method="POST">
+        <form action="connect.php" method="POST">
           <input type="hidden" name="tab_id" value="<?php echo $tab_id; ?>">
           
           <div class="form-group">
