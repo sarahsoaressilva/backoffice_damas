@@ -47,8 +47,7 @@
     
     <!-- FORMULÁRIO -->
     <div class="container">
-        <div class="row align-items-start">
-            
+        <div class="row align-items-start">         
         <form action="connect.php" method="POST">
             <input type='hidden' name='plano_id' value='<?php echo $plano_id ?>' >
             
