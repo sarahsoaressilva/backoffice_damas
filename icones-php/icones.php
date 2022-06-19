@@ -61,7 +61,7 @@
             <div class="form-group">
                 <label> Descrição </label>
                 <input type="text" class="form-control" name="descricao" 
-                value="<?php echo $descricao; ?>" placeholder="Icone Neymar">>
+                value="<?php echo $descricao; ?>" placeholder="Icone Neymar">
             </div>
             
             <div class="form-group">
@@ -73,7 +73,7 @@
             <div class="form-group">
                 <label> Link da Imagem </label>
                 <input type="blob" class="form-control" 
-                name="img" value="<?php echo $img; ?>" placeholder="https://..."> >
+                name="img" value="<?php echo $img; ?>" placeholder="https://..." >
             </div>
             
             <div class="form-group">

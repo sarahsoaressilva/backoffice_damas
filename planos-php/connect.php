@@ -63,7 +63,6 @@
             $tipo = $row['tipo'];
         }
         
-        header("location: planos.php");
         
     }    //Fim EDIT
         

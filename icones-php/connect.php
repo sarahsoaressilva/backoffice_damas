@@ -54,7 +54,6 @@
             $plano_id = $row['plano_id'];
         }
         
-        header("location: icones.php");
         
     }    //Fim EDIT
         
