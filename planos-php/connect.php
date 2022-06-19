@@ -106,7 +106,7 @@
      
       echo $imprimir;
       
-      $imprimir = " 
+      $imprimir .= " 
         <div class='container'>
            <h4> Tabuleiro </h4>
         <div class='row justify-content-center'>
@@ -135,7 +135,7 @@
       echo '<br>';
       while( $row = $result->fetch_assoc() ) {
 
-        $imprimir = "
+        $imprimir .= "
           <tr>
             <td> $row[tab_id] </td>
             <td> $row[nome] </td>
@@ -149,7 +149,7 @@
         echo $imprimir;
       }
 
-      $imprimir = '
+      $imprimir .= '
           </table>
         </div> 
       </div>
@@ -158,7 +158,7 @@
       echo $imprimir;
       
       // ---------------------------------------- Peças
-      $imprimir = " 
+      $imprimir .= " 
         <h4> Peças </h4>
         <div class='row justify-content-center'>
           
@@ -185,7 +185,7 @@
       echo '<br>';
       // Imprime dados do Tabuleiro
       while( $row = $result->fetch_assoc() ) {
-        $imprimir = "
+        $imprimir .= "
           <tr>
             <td> $row[peca_id] </td>
             <td> $row[nome] </td>
@@ -199,7 +199,7 @@
         echo $imprimir;
       }
 
-      $imprimir = '
+      $imprimir .= '
           </table>
         </div> 
       </div>
@@ -209,7 +209,7 @@
 
       // ---------------------------------------- Icones
 
-      $imprimir = " 
+      $imprimir .= " 
         <h4> Icones </h4>
         <div class='row justify-content-center'>
           
@@ -237,7 +237,7 @@
 
       // Imprime dados dos Icones
       while( $row = $result->fetch_assoc() ) {
-        $imprimir = "
+        $imprimir .= "
           <tr>
             <td> $row[icones_id] </td>
             <td> $row[nome] </td>
@@ -251,7 +251,7 @@
         echo $imprimir;
       }
 
-      $imprimir = '
+      $imprimir .= '
           </table>
         </div> 
       </div>
