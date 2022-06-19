@@ -257,6 +257,6 @@
       </div>
       ';
 
-      //echo $imprimir;
+      echo $imprimir;
     } 
   
