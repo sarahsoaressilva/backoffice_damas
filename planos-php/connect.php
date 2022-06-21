@@ -202,14 +202,14 @@
       // ---------------------------------------- Icones
 
       $imprimir .= " 
-        <h4> Icones </h4>
+        <h4> Planos de Fundo </h4>
         <div class='row justify-content-center'>
           
           <div class='table-resposive'>
             <table class='table table-striped'>
               <thead>
                   <tr>
-                      <th> Icon_Id </th>
+                      <th> Imagem Id </th>
                       <th> Nome do Icone </th>
                       <th> Descrição </th>
                       <th> Valor </th>
@@ -222,7 +222,7 @@
       //echo $imprimir;
 
       // Consulta das Icones
-      $sql = " SELECT * FROM Icones WHERE plano_id=$plano_id";
+      $sql = " SELECT * FROM imagens_fundo WHERE plano_id=$plano_id";
       $result = $conn->query($sql) or die( $conn->error() );
 
       echo '<br>';
@@ -231,7 +231,7 @@
       while( $row = $result->fetch_assoc() ) {
         $imprimir .= "
           <tr>
-            <td> $row[icones_id] </td>
+            <td> $row[fundo_id] </td>
             <td> $row[nome] </td>
             <td> $row[descricao] </td>
             <td> $row[valor] </td>
