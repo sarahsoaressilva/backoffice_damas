@@ -30,7 +30,7 @@
     
     // Método de DELETE 
     if ( isset($_GET['delete']) ) {
-        $icones_id = $_GET['delete'];
+        $fundo_id = $_GET['delete'];
         
         $conn->query("DELETE FROM imagens_fundo WHERE fundo_id=$fundo_id") or die( $conn->error() );
                 
