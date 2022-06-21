@@ -32,7 +32,7 @@
                         <a class="nav-link" href="/peças-php/peças-crud.php"> Peças </a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="icones.php"> Icones </a>
+                        <a class="nav-link" href="imagens.php"> Icones </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/planos-php/planos.php"> Planos </a>
@@ -50,7 +50,7 @@
         <div class="row align-items-start">
             
         <form action="connect.php" method="POST">
-            <input type='hidden' name='icones_id' value='<?php echo $icones_id ?>' >
+            <input type='hidden' name='icones_id' value='<?php echo $fundo_id ?>' >
             
             <div class="form-group">
                 <label> Nome do Icone </label>
@@ -108,7 +108,7 @@
         <table class="table">
           <thead>
             <tr>
-              <th> Nome do Icone </th>
+              <th> Nome do Plano de Fundo </th>
               <th> Descrição </th>
               <th> Valor </th>
               <th> Imagem </th>
@@ -120,7 +120,7 @@
         $conn = new mysqli('us-cdbr-east-05.cleardb.net', 'b83571dc6d5fc4', 
             '90ed83fc', 'heroku_8e53453ac7a4cef');
 
-        $result = $conn->query("SELECT * FROM icones") or die( $conn->error() );
+        $result = $conn->query("SELECT * FROM imagens_fundo") or die( $conn->error() );
             
         while($row = $result->fetch_assoc() ): 
     ?>
@@ -132,10 +132,10 @@
         <td> <img src="<?php echo $row['img']; ?>" width="100" height="100"> </td>
         <td> <?php echo $row['plano_id']; ?> </td>
         <td> 
-            <a href="icones.php?edit=<?php echo $row['icones_id']; ?>"
+            <a href="imagens.php?edit=<?php echo $row['fundo_id']; ?>"
             class="btn btn-info"> Editar </a> 
             
-            <a href="icones.php?delete=<?php echo $row['icones_id']; ?>"
+            <a href="imagens.php?delete=<?php echo $row['fundo_id']; ?>"
             class="btn btn-danger"> Deletar </a> 
         </td>
       </tr> 

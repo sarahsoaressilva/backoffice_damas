@@ -8,7 +8,7 @@
     // Create connection
     $conn = new mysqli($servername, $username, $password, $database);
 
-    $icones_id = 0;
+    $fundo_id = 0;
     $valor = 0;
     $plano_id = 0;
     $update = false;
@@ -21,10 +21,10 @@
         $img = $_POST['img'];
         $plano_id = $_POST['plano_id'];
         
-        $conn->query("INSERT INTO icones (nome, descricao, valor, img, plano_id)
+        $conn->query("INSERT INTO imagens_fundo (nome, descricao, valor, img, plano_id)
         VALUES ('$nome', '$descricao', '$valor', '$img', '$plano_id') ") or die( $conn->error() );
         
-        header("location: icones.php");
+        header("location: imagens.php");
         
     } //Fim INSERT
     
@@ -32,18 +32,18 @@
     if ( isset($_GET['delete']) ) {
         $icones_id = $_GET['delete'];
         
-        $conn->query("DELETE FROM icones WHERE icones_id=$icones_id") or die( $conn->error() );
+        $conn->query("DELETE FROM imagens_fundo WHERE fundo_id=$fundo_id") or die( $conn->error() );
                 
-        header("location: icones.php");
+        header("location: imagens.php");
         
     } //Fim DELETE
     
     // Método de EDIT
     if ( isset($_GET['edit']) ) {
-        $icones_id = $_GET['edit'];
+        $fundo_id = $_GET['edit'];
         $update = true;
         
-        $result = $conn->query("SELECT * FROM icones WHERE icones_id=$icones_id") or die( $conn->error() );
+        $result = $conn->query("SELECT * FROM imagens_fundo WHERE fundo_id=$fundo_id") or die( $conn->error() );
       
         if( count( array ($result) ) == 1 ) {
             $row = $result->fetch_array();
@@ -59,17 +59,17 @@
         
     // Método de UPDATE 
     if ( isset($_POST['update']) ) {
-        $icones_id = $_POST['icones_id'];
+        $fundo_id = $_POST['fundo_id'];
         $nome = $_POST['nome'];
         $descricao = $_POST['descricao'];
         $valor = $_POST['valor'];
         $img = $_POST['img'];
         $plano_id = $_POST['plano_id'];
             
-        $conn->query("UPDATE icones 
+        $conn->query("UPDATE imagens_fundo 
         SET nome='$nome', descricao='$descricao', valor='$valor', img='$img', plano_id='$plano_id' 
-        WHERE icones_id=$icones_id") or die( $conn->error() );
+        WHERE fundo_id=$fundo_id") or die( $conn->error() );
         
-        header("location: icones.php");
+        header("location: imagens.php");
             
     } //Fim UPDATE
