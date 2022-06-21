@@ -34,7 +34,7 @@
                         <a class="nav-link" href="/peças-php/peças-crud.php"> Peças </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/imagens/imagens.php"> Icones </a>
+                        <a class="nav-link" href="/imagens/imagens.php"> Imagens </a>
                     </li>
                      <li class="nav-item active">
                         <a class="nav-link" href="/planos-php/planos.php"> Planos </a>

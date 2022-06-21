@@ -32,7 +32,7 @@
                         <a class="nav-link" href="/peças-php/peças-crud.php"> Peças </a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="imagens.php"> Icones </a>
+                        <a class="nav-link" href="imagens.php"> Imagens </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/planos-php/planos.php"> Planos </a>
@@ -50,18 +50,18 @@
         <div class="row align-items-start">
             
         <form action="connect.php" method="POST">
-            <input type='hidden' name='icones_id' value='<?php echo $fundo_id ?>' >
+            <input type='hidden' name='fundo_id' value='<?php echo $fundo_id ?>' >
             
             <div class="form-group">
-                <label> Nome do Icone </label>
+                <label> Nome do Fundo </label>
                 <input type="text" class="form-control form-control-sm" name="nome" 
-                value="<?php echo $nome; ?>" placeholder="Icone Neymar">
+                value="<?php echo $nome; ?>" placeholder="Estadio Maracanã">
             </div>
             
             <div class="form-group">
                 <label> Descrição </label>
                 <input type="text" class="form-control" name="descricao" 
-                value="<?php echo $descricao; ?>" placeholder="Icone Neymar">
+                value="<?php echo $descricao; ?>" placeholder="Maracanã">
             </div>
             
             <div class="form-group">
